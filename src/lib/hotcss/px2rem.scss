@@ -1,0 +1,5 @@
+@function px2rem($px){
+  @return $px*320/$designWidth/20 + rem;
+}
+// 设置设计图宽度，根据不同设计图调整宽度即可
+$designWidth : 750;
