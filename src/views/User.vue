@@ -42,14 +42,14 @@ export default {
     logoutClick() {
       let user = JSON.parse(sessionStorage.getItem('Login_data'))
       console.log(user)
-      let CNO = user.company_num
-      let PNO = user.person_num
+      let CNO = user.CNO
+      let PNO = user.PNO
       // let CNO = this.LoginUser.CNO
       // let PNO = this.LoginUser.PNO
       this.cleartUserData()
       localStorage.clear()
       sessionStorage.clear()
-      this.$router.push({ path: '/', query: { CNO: CNO, PNO: PNO } })
+      this.$router.push({ name: 'Login', params: { CNO: CNO, PNO: PNO } })
     }
   }
 }

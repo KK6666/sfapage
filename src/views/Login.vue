@@ -24,7 +24,7 @@
               v-model="company_num"
               v-validate="'required|length:4'"
               type="number"
-              placeholder="请输入4位数字"
+              placeholder="请输入任意4位数字"
               name="comNum"
               @focus="
                 active_index = 1
@@ -49,7 +49,7 @@
               v-model="person_num"
               v-validate="{ required: true, length: 4 }"
               type="number"
-              placeholder="请输入4位数字"
+              placeholder="请输入任意4位数字"
               name="perNum"
               @focus="
                 active_index = 2
@@ -133,9 +133,10 @@ export default {
     if (this.autolog === true && !this.$route.query.stopAutoLog) {
       this.handleLogBtnClick()
     }
+    console.log(this.$route.params)
     // 注销登录返回登录页面时，路由里有用户信息，显示出来
-    if (this.$route.query.PNO) this.person_num = this.$route.query.PNO
-    if (this.$route.query.CNO) this.company_num = this.$route.query.CNO
+    if (this.$route.params.PNO) this.person_num = this.$route.params.PNO
+    if (this.$route.params.CNO) this.company_num = this.$route.params.CNO
   },
   methods: {
     ...mapMutations([
@@ -179,6 +180,10 @@ export default {
                 this.setDataToLocalStorage()
               }
               // 用户信息存入sessionStorage，解决vuex在页面刷新后就丢失数据问题
+              ///////////////////////////////////////////
+              res.data.user.CNO = this.company_num
+              res.data.user.PNO = this.person_num
+              //////////////////////////////////////////////
               this.setDataToSessionStorage(res)
               // 用户信息存入vuex
               this.setDataToVuex(res)
