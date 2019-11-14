@@ -3,11 +3,11 @@
     <TopHead title="个人信息" class="header"> </TopHead>
     <div class="main">
       <img
-        src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3790935725,2463733910&fm=26&gp=0.jpg"
+        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573725886876&di=3261d3dc3e2b02578512b4ed6413ca9f&imgtype=0&src=http%3A%2F%2Fimg3.qianzhan.com%2Fnews%2F201404%2F28%2F20140428-809d810e3e374304_980x660.jpg"
       />
       <ul class="name">
         <li>员工姓名</li>
-        <li>{{ LoginUser.name }}</li>
+        <li>奶茶</li>
       </ul>
       <ul class="tel">
         <li>手机号码</li>
@@ -40,7 +40,8 @@ export default {
   methods: {
     ...mapMutations(['cleartUserData']),
     logoutClick() {
-      let user = JSON.parse(localStorage.getItem('Login_data'))
+      let user = JSON.parse(sessionStorage.getItem('Login_data'))
+      console.log(user)
       let CNO = user.company_num
       let PNO = user.person_num
       // let CNO = this.LoginUser.CNO

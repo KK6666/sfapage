@@ -46,8 +46,8 @@
 <script>
 import ImgBtn from '../components/ImgBtn'
 import service from '../service'
-import canvasResize from 'canvas-resize'
-import Utility from '../common/Utility'
+// import canvasResize from 'canvas-resize'
+// import Utility from '../common/Utility'
 import { Toast } from 'mint-ui'
 export default {
   name: 'Sign',
@@ -75,41 +75,46 @@ export default {
     },
     // 照片文件上传至服务器，并在页面展示（注意：此功能需要后台配合完成）
     filesChange() {
-      let formData = new FormData()
-      // 拿到当前上传的图片
-      let file = this.$refs.inputFile.files[0]
-      // 对当前上传的图片file，进行压缩后，callback返回一个base64的字符串
-      canvasResize(file, {
-        crop: false, // 裁剪参数
-        quality: 0.5, // 压缩率， 0-1
-        rotate: 0, // 是否旋转
-        callback: baseStr => {
-          // 返回的base64字符， 转换成Blob数据对象(这里的服务器只能接收二进制数据)
-          let fileBlob = Utility.convertBase64UrlToBlob(baseStr, {
-            type: file.type
-          })
-          // 文档要求：请求表单中，文件对应的name必须为： imgF;
-          formData.append('imgF', fileBlob)
-          service
-            .uploadImg(formData)
-            .then(res => {
-              console.log(res)
-              // this.imgList.push(`http://localhost:8889${res.data.img}`)
-              // 这里不可以直接用http://localhost:8889，服务器变化时，这个地址也会改变。可以再.env文件里设置变量VUE_APP_BASEURL=http://localhost:8889。当服务器改变时，可以通过改变.env来实现（参考文档vue_cli--环境变量和模式）
-              this.imgList.push({
-                isChecked: false,
-                url: `${process.env.VUE_APP_BASEURL}${res.data.img}`
-              })
-              // 上传完成清空input的value，可以接着再上传同一张图片
-              this.$refs.inputFile.value = ''
-              // console.log(this.imgList)
-            })
-            .catch(e => {
-              console.log('uploadImg failed')
-              console.log(e)
-            })
-        }
+      this.imgList.push({
+        isChecked: false,
+        url: `https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573725886876&di=3261d3dc3e2b02578512b4ed6413ca9f&imgtype=0&src=http%3A%2F%2Fimg3.qianzhan.com%2Fnews%2F201404%2F28%2F20140428-809d810e3e374304_980x660.jpg`
       })
+
+      // let formData = new FormData()
+      // // 拿到当前上传的图片
+      // let file = this.$refs.inputFile.files[0]
+      // 对当前上传的图片file，进行压缩后，callback返回一个base64的字符串
+      // canvasResize(file, {
+      //   crop: false, // 裁剪参数
+      //   quality: 0.5, // 压缩率， 0-1
+      //   rotate: 0, // 是否旋转
+      //   callback: baseStr => {
+      //     // 返回的base64字符， 转换成Blob数据对象(这里的服务器只能接收二进制数据)
+      //     let fileBlob = Utility.convertBase64UrlToBlob(baseStr, {
+      //       type: file.type
+      //     })
+      //     // 文档要求：请求表单中，文件对应的name必须为： imgF;
+      //     formData.append('imgF', fileBlob)
+      //     service
+      //       .uploadImg(formData)
+      //       .then(res => {
+      //         console.log(res)
+      //         // this.imgList.push(`http://localhost:8889${res.data.img}`)
+      //         // 这里不可以直接用http://localhost:8889，服务器变化时，这个地址也会改变。可以再.env文件里设置变量VUE_APP_BASEURL=http://localhost:8889。当服务器改变时，可以通过改变.env来实现（参考文档vue_cli--环境变量和模式）
+      //         this.imgList.push({
+      //           isChecked: false,
+      //           url: `${process.env.VUE_APP_BASEURL}${res.data.img}`
+      //         })
+      //         // 上传完成清空input的value，可以接着再上传同一张图片
+      //         this.$refs.inputFile.value = ''
+      //         // console.log(this.imgList)
+      //       })
+      //       .catch(e => {
+      //         console.log('uploadImg failed')
+      //         console.log(e)
+      //       })
+      //   }
+      // })
     },
     // 签到信息提交至服务器
     submitSigin() {

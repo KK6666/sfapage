@@ -59,7 +59,7 @@ import service from '../service'
 import { Indicator, Toast } from 'mint-ui'
 import MescrollVue from 'mescroll.js/mescroll.vue'
 import { mapState, mapMutations } from 'vuex'
-import Utility from '../common/Utility'
+// import Utility from '../common/Utility'
 export default {
   name: 'VisitShop',
   components: {
@@ -111,14 +111,24 @@ export default {
   created() {},
   mounted() {
     // 定位成功后请求shop数据（getLocation已用promise封装）
-    Utility.getLocation()
-      .then(pos => {
-        this.pos = pos
-        this.getData()
-      })
-      .catch(e => {
-        console.log(e)
-      })
+    // Utility.getLocation()
+    //   .then(pos => {
+    //     this.pos = pos
+    //     this.getData()
+    //   })
+    //   .catch(e => {
+    //     console.log(e)
+    //   })
+    ////////////////////////////////////////////////
+    Indicator.open('定位中...')
+    setTimeout(() => {
+      console.log('sett')
+      Indicator.close()
+      this.pos = { Lng: 11, Lat: 11 }
+      this.getData()
+    }, 1000)
+
+    ///////////////////////////////////////////////////
     // 设置mescroll定位的top值 ,下拉刷新关闭
     this.setMescroll()
   },
@@ -126,14 +136,23 @@ export default {
     // 注销登录后，不关闭页面，再次登录后打开此页面会出现不加载数据情况，应为keepAlive的问题，手动触发一次加载数据
     if (this.shopList.length === 0) {
       // 定位成功后请求shop数据（getLocation已用promise封装）
-      Utility.getLocation()
-        .then(pos => {
-          this.pos = pos
-          this.getData()
-        })
-        .catch(e => {
-          console.log(e)
-        })
+      // Utility.getLocation()
+      //   .then(pos => {
+      //     this.pos = pos
+      //     this.getData()
+      //   })
+      //   .catch(e => {
+      //     console.log(e)
+      //   })
+      ////////////////////////////////////////////////
+      Indicator.open('定位中...')
+      setTimeout(() => {
+        console.log('sett')
+        Indicator.close()
+        this.pos = { Lng: 11, Lat: 11 }
+        this.getData()
+      }, 1000)
+      ///////////////////////////////////////////////////
       // 设置mescroll定位的top值 ,下拉刷新关闭
       this.setMescroll()
     }
@@ -142,7 +161,6 @@ export default {
     console.log('deactivated')
     Indicator.close()
   },
- 
   methods: {
     ...mapMutations(['shopListPush', 'emptyShopList']),
     // 当搜索栏请空时，发起一次新的请求，避免页面无有用数据，增强用户体验
