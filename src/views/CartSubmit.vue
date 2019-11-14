@@ -86,7 +86,8 @@ export default {
         shopId: this.shopItem.shop.id
       })
       setTimeout(() => {
-        this.$router.push('/home')
+        // this.$router.push('/home')
+        this.$router.go(-1)
       }, 500)
     },
     getPriceTotal() {

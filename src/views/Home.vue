@@ -1,6 +1,6 @@
 <template>
   <div class="home view">
-    <TopHead title="SFA" :router-data="routerData">
+    <TopHead title="SFA" :router-data="routerData" @backClick="backClick">
       <router-link
         slot="r"
         class="icon iconfont icon-user"
@@ -96,7 +96,7 @@ export default {
       monthPercent: 0,
       totalShops: 0,
       topicList: topicList,
-      routerData: { path: '/' }
+      routerData: { path: '/', query: { stopAutoLog: 1 } }
     }
   },
   computed: {
@@ -115,7 +115,9 @@ export default {
       this.totalShops = res.data.totalShops
     })
   },
-  methods: {}
+  methods: {
+    backClick() {}
+  }
 }
 </script>
 

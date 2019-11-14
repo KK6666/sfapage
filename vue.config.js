@@ -28,14 +28,15 @@ module.exports = {
     // 可以让eslint警告显示在控制台
     hot: true,
     clientLogLevel: 'warning'
-  }
+  },
+  publicPath: process.env.NODE_ENV === 'production' ? '/sfapage/' : '/',
   // 通过外联cdn加载依赖，build时不会打入包中，减小包大小
-  // configureWebpack: config => {
-  //   config.externals = {
-  //     vue: 'Vue',
-  //     vuex: 'Vuex',
-  //     'vue-router': 'VueRouter',
-  //     axios: 'axios'
-  //   }
-  // }
+  configureWebpack: config => {
+    config.externals = {
+      vue: 'Vue',
+      vuex: 'Vuex',
+      'vue-router': 'VueRouter',
+      axios: 'axios'
+    }
+  }
 }

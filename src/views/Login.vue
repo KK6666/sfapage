@@ -30,7 +30,7 @@
                 active_index = 1
                 $refs.comNum.placeholder = ''
               "
-              @blur="$refs.comNum.placeholder = '请输入4位数字'"
+              @blur="$refs.comNum.placeholder = '请输入任意4位数字'"
             />
             <!-- 显示验证未通过信息 -->
             <!-- <span>{{ errors.first('comNum') }}</span> -->
@@ -55,7 +55,7 @@
                 active_index = 2
                 $refs.perNum.placeholder = ''
               "
-              @blur="$refs.perNum.placeholder = '请输入4位数字'"
+              @blur="$refs.perNum.placeholder = '请输入任意4位数字'"
             />
           </div>
           <div
@@ -69,7 +69,7 @@
               v-model="password"
               v-validate="'required|min:6'"
               type="password"
-              placeholder="请输入6位及以上密码"
+              placeholder="任意6位及以上字符"
               name="pwd"
               @focus="
                 active_index = 3
@@ -129,7 +129,8 @@ export default {
     for (let i in data) {
       this[i] = data[i]
     }
-    if (this.autolog === true) {
+    // 当从home页面返回时，如果已经选择了自动登录，会无法返回回来，通过stopAutoLog组织自动跳转
+    if (this.autolog === true && !this.$route.query.stopAutoLog) {
       this.handleLogBtnClick()
     }
     // 注销登录返回登录页面时，路由里有用户信息，显示出来
@@ -169,6 +170,7 @@ export default {
             Passwd: this.password
           })
           .then(res => {
+            console.log(res)
             Indicator.close()
             if (res.data.code === 1) {
               // 登录成功

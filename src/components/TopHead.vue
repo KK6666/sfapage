@@ -2,7 +2,10 @@
   <div class="topHead">
     <div
       class="tp-l"
-      @click="routerData ? $router.push(routerData) : $router.go(-1)"
+      @click="
+        routerData ? $router.push(routerData) : $router.go(-1)
+        $emit('backClick')
+      "
     >
       <i class="icon iconfont icon-back"></i>
     </div>

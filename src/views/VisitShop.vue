@@ -138,6 +138,11 @@ export default {
       this.setMescroll()
     }
   },
+  deactivated() {
+    console.log('deactivated')
+    Indicator.close()
+  },
+ 
   methods: {
     ...mapMutations(['shopListPush', 'emptyShopList']),
     // 当搜索栏请空时，发起一次新的请求，避免页面无有用数据，增强用户体验

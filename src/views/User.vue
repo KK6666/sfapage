@@ -40,8 +40,11 @@ export default {
   methods: {
     ...mapMutations(['cleartUserData']),
     logoutClick() {
-      let CNO = this.LoginUser.CNO
-      let PNO = this.LoginUser.PNO
+      let user = JSON.parse(localStorage.getItem('Login_data'))
+      let CNO = user.company_num
+      let PNO = user.person_num
+      // let CNO = this.LoginUser.CNO
+      // let PNO = this.LoginUser.PNO
       this.cleartUserData()
       localStorage.clear()
       sessionStorage.clear()

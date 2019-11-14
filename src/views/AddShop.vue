@@ -32,7 +32,7 @@
 <script>
 import Utility from '../common/Utility'
 import imgl from '../assets/img/marker.png'
-import { Toast } from 'mint-ui'
+import { Indicator, Toast } from 'mint-ui'
 export default {
   name: 'AddShop',
   data() {
@@ -43,6 +43,10 @@ export default {
   created() {},
   mounted() {
     this.getMap()
+  },
+  destroyed() {
+    console.log('destroyed')
+    Indicator.close()
   },
   methods: {
     getMap() {
