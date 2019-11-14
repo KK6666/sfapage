@@ -75,7 +75,7 @@
                 active_index = 3
                 $refs.pwd.placeholder = ''
               "
-              @blur="$refs.pwd.placeholder = '任意6位及以上密码'"
+              @blur="$refs.pwd.placeholder = '任意6位及以上字符'"
             />
           </div>
         </div>
