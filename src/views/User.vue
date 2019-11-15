@@ -49,7 +49,8 @@ export default {
       this.cleartUserData()
       localStorage.clear()
       sessionStorage.clear()
-      this.$router.push({ name: 'Login', params: { CNO: CNO, PNO: PNO } })
+      // this.$router.push({ name: 'Login', params: { CNO: CNO, PNO: PNO } })
+      this.$router.replace({ name: 'Login', params: { CNO: CNO, PNO: PNO } })
     }
   }
 }

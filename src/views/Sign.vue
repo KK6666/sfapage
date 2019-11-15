@@ -139,15 +139,18 @@ export default {
           Toast({
             message: '签到成功！',
             position: 'middle',
-            duration: 2000
+            duration: 500
           })
+          setTimeout(() => {
+            this.$router.go(-1)
+          }, 500)
         })
         .catch(e => {
           console.log(e)
           Toast({
             message: '签到失败！',
             position: 'middle',
-            duration: 2000
+            duration: 500
           })
         })
     }

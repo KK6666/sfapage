@@ -39,14 +39,24 @@
         <textarea placeholder="点击填写历史备注~"></textarea>
       </div>
       <div class="btn-wrap">
-        <div class="btn" @click="$router.push('/order/' + $route.params.id)">
+        <!-- <div class="btn" @click="$router.push('/order/' + $route.params.id)">
           下单
         </div>
         <div class="btn active">
           <router-link :to="`/shopsign/${$route.params.id}`">
             商铺签到
           </router-link>
+        </div> -->
+        <div class="btn" @click="$router.push('/order/' + $route.params.id)">
+          下单
         </div>
+        <router-link
+          :to="`/shopsign/${$route.params.id}`"
+          class="btn active"
+          tag="div"
+        >
+          商铺签到
+        </router-link>
       </div>
     </div>
   </div>

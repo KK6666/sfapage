@@ -106,7 +106,7 @@
 <script>
 import '../assets/font/iconfont.css'
 import { Indicator, Toast } from 'mint-ui'
-import { mapMutations } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 // axios请求方法全部封装在service
 import service from '../service'
 export default {
@@ -123,6 +123,9 @@ export default {
       autolog: false
     }
   },
+  computed: {
+    ...mapState(['LoginUser'])
+  },
   created() {
     // localstorage里的数据赋值给data的属性
     let data = JSON.parse(localStorage.getItem('Login_data'))
@@ -133,7 +136,6 @@ export default {
     if (this.autolog === true && !this.$route.query.stopAutoLog) {
       this.handleLogBtnClick()
     }
-    console.log(this.$route.params)
     // 注销登录返回登录页面时，路由里有用户信息，显示出来
     if (this.$route.params.PNO) this.person_num = this.$route.params.PNO
     if (this.$route.params.CNO) this.company_num = this.$route.params.CNO
@@ -141,7 +143,8 @@ export default {
   methods: {
     ...mapMutations([
       // 将 `this.saveUserData()` 映射为 `this.$store.commit('saveUserData')`
-      'saveUserData'
+      'saveUserData',
+      'cleartUserData'
     ]),
     // 选择框逻辑：自动登录需同时记住密码，当取消记住密码，自动登录也要取消
     changeRememberStatus() {
@@ -163,6 +166,11 @@ export default {
           duration: 1000
         })
       } else {
+        // 当返回值至log页面时，再次点击登录，清空所有数据
+        this.cleartUserData()
+        localStorage.clear()
+        sessionStorage.clear()
+
         Indicator.open('登陆中...')
         service
           .login({

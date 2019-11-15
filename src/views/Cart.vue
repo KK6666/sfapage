@@ -1,6 +1,6 @@
 <template>
   <div class="cart view">
-    <TopHead title="购物车" class="header"></TopHead>
+    <TopHead title="购物车" class="header"> </TopHead>
     <div v-if="isEmpty" class="empty">购物车当前无商品</div>
     <div v-if="!isEmpty" class="main">
       <Warehouse
