@@ -206,7 +206,10 @@ export default {
               this.cur = this.total
             }
           }
-          if (res.data.length <= 0 || this.goods.length >= 320) {
+          if (!this.isOnSales && this.goods.length >= 320) {
+            this.hasNext = false
+          }
+          if (this.isOnSales && this.goods.length >= 159) {
             this.hasNext = false
           }
           // 数据渲染成功后,隐藏下拉刷新的状态,可通过mescroll.endSuccess的第二个参数设置是否还有数据，列表如果无下一页数据,则提示无更多数据
