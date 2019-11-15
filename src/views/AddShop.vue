@@ -41,12 +41,12 @@ export default {
     }
   },
   created() {
-    if (this.isWeiXin() && this.isAndroid()) {
-      MessageBox(
-        '注意',
-        '微信7.0及之后版本升级了对https的安全限制，安卓设备微信内置浏览器会定位失败，其他浏览器或ios设备可正常使用'
-      )
-    }
+    // if (this.isWeiXin() && this.isAndroid()) {
+    //   MessageBox(
+    //     '注意',
+    //     '微信7.0及之后版本升级了对https的安全限制，安卓设备微信内置浏览器会定位失败，其他浏览器或ios设备可正常使用'
+    //   )
+    // }
   },
   mounted() {
     this.getMap()
