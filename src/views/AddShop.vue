@@ -32,7 +32,7 @@
 <script>
 import Utility from '../common/Utility'
 import imgl from '../assets/img/marker.png'
-import { Indicator, Toast } from 'mint-ui'
+import { Indicator, Toast, MessageBox } from 'mint-ui'
 export default {
   name: 'AddShop',
   data() {
@@ -40,7 +40,14 @@ export default {
       address: ''
     }
   },
-  created() {},
+  created() {
+    if (this.isWeiXin() && this.isAndroid()) {
+      MessageBox(
+        '注意',
+        '微信7.0及之后版本升级了对https的安全限制，安卓设备微信内置浏览器会定位失败，其他浏览器或ios设备可正常使用'
+      )
+    }
+  },
   mounted() {
     this.getMap()
   },
@@ -51,7 +58,8 @@ export default {
   methods: {
     getMap() {
       //  定位（getLocation已用promise封装）
-      Utility.getLocation()
+      let href = window.location.href
+      Utility.getLocation(href)
         .then(pos => {
           this.initMap(pos)
         })
@@ -128,6 +136,23 @@ export default {
       setTimeout(() => {
         this.$router.go(-1)
       }, 500)
+    },
+    isWeiXin() {
+      var ua = window.navigator.userAgent.toLowerCase()
+      if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        return true
+      } else {
+        return false
+      }
+    },
+    isAndroid() {
+      let u = navigator.userAgent
+      let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1
+      if (isAndroid) {
+        return true
+      } else {
+        return false
+      }
     }
   }
 }
@@ -199,5 +224,8 @@ export default {
     /* Internet Explorer 10-11 */
     color: #ccc;
   }
+}
+
+.warn {
 }
 </style>

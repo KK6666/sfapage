@@ -51,6 +51,22 @@
     font-size: px2rem(35) !important;
   }
 }
+.mint-msgbox {
+  .mint-msgbox-header {
+    .mint-msgbox-title {
+      font-size: px2rem(35);
+    }
+  }
+  .mint-msgbox-content {
+    .mint-msgbox-message {
+      font-size: px2rem(30);
+      line-height: px2rem(45);
+    }
+  }
+  .mint-msgbox-btns {
+    height: px2rem(70);
+  }
+}
 
 // 修改mescroll样式
 .mescroll-totop {

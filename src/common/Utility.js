@@ -19,7 +19,8 @@ export default {
 
   // 腾讯地图获取设备地理坐标（使用promise封装）
   /* eslint-disable */
-  getLocation() {
+  getLocation(href) {
+
     Indicator.open('定位中...')
     return new Promise((resolve, reject) => {
       var geolocation = new window.qq.maps.Geolocation(
@@ -33,10 +34,16 @@ export default {
           resolve(position)
         },
         () => {
+
           Indicator.close()
           reject()
-          Toast('定位失败，请刷新重试')
           console.log('定位失败')
+          // 判断是否还在当前页面，如果已经离开了，不再弹出Toast
+          if (window.location.href != href) {
+            return
+          }
+          Toast('定位失败，请刷新重试')
+
         }
       )
     })
