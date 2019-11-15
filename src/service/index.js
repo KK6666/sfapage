@@ -54,7 +54,7 @@ export default {
   // },
   getNotice() {
     return axios.get(
-      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock1/getNotice.json'
+      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock1/getNotice1.json'
     )
   },
   // 设置公告已读

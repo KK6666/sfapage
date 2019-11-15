@@ -1,40 +1,38 @@
 <template>
-  <keep-alive>
-    <div class="notice view">
-      <TopHead title="公告" class="header"></TopHead>
-      <div class="main">
-        <!--mescroll滚动区域的基本结构-->
-        <mescroll-vue
-          ref="mescroll"
-          :down="mescrollDown"
-          :up="mescrollUp"
-          class="mescroll"
-          @init="mescrollInit"
-        >
-          <ul class="noticeList">
-            <li
-              v-for="(item, index) in noticeList"
-              :key="index"
-              class="noticeItem"
-            >
-              <router-link :to="`/notice/${item.id}`">
-                <div class="noticeWrap">
-                  <i
-                    class="icon iconfont icon-dian"
-                    :class="{ readed: item.isRead }"
-                  ></i>
-                  <div class="notice-bd">
-                    <h3 class="noticeTitle">{{ item.title }}</h3>
-                    <p class="noticeDate">{{ item.SubDate }}</p>
-                  </div>
+  <div class="notice view">
+    <TopHead title="公告" class="header"></TopHead>
+    <div class="main">
+      <!--mescroll滚动区域的基本结构-->
+      <mescroll-vue
+        ref="mescroll"
+        :down="mescrollDown"
+        :up="mescrollUp"
+        class="mescroll"
+        @init="mescrollInit"
+      >
+        <ul class="noticeList">
+          <li
+            v-for="(item, index) in noticeList"
+            :key="index"
+            class="noticeItem"
+          >
+            <router-link :to="`/notice/${item.id}`">
+              <div class="noticeWrap">
+                <i
+                  class="icon iconfont icon-dian"
+                  :class="{ readed: item.isRead }"
+                ></i>
+                <div class="notice-bd">
+                  <h3 class="noticeTitle">{{ item.title }}</h3>
+                  <p class="noticeDate">{{ item.SubDate }}</p>
                 </div>
-              </router-link>
-            </li>
-          </ul>
-        </mescroll-vue>
-      </div>
+              </div>
+            </router-link>
+          </li>
+        </ul>
+      </mescroll-vue>
     </div>
-  </keep-alive>
+  </div>
 </template>
 
 <script>
