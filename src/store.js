@@ -45,8 +45,7 @@ export default new Vuex.Store({
       state.noticeList.unshift(...data)
     },
     // 设置公告已读
-    setNoticeReaded(state, id) {
-      const index = state.noticeList.findIndex(item => item.id == id)
+    setNoticeReaded(state, index) {
       state.noticeList[index].isRead = true
     },
     // shopList数组push数据

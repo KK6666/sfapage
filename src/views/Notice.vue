@@ -16,15 +16,19 @@
             :key="index"
             class="noticeItem"
           >
-            <router-link :to="`/notice/${item.id}`">
+            <router-link :to="`/notice/${index}`">
               <div class="noticeWrap">
                 <i
                   class="icon iconfont icon-dian"
                   :class="{ readed: item.isRead }"
                 ></i>
                 <div class="notice-bd">
-                  <h3 class="noticeTitle">{{ item.title }}</h3>
-                  <p class="noticeDate">{{ item.SubDate }}</p>
+                  <h3 class="noticeTitle" :class="{ readed: item.isRead }">
+                    {{ item.title }}
+                  </h3>
+                  <p class="noticeDate" :class="{ readed: item.isRead }">
+                    {{ item.SubDate }}
+                  </p>
                 </div>
               </div>
             </router-link>
@@ -204,7 +208,7 @@ export default {
         line-height: px2rem(20);
         font-size: px2rem(50);
       }
-      i.readed {
+      .readed {
         color: #ccc;
       }
     }

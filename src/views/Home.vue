@@ -54,32 +54,33 @@ const topicList = [
     url: '/visitshop'
   },
   {
-    menuName: '电话订单',
-    imgUrl: require('@/assets/img/dhdd.png'),
-    url: '/phoneorder'
-  },
-  {
-    menuName: '订单状态',
-    imgUrl: require('@/assets/img/ddzt.png'),
-    url: '/orders'
-  },
-  {
-    menuName: '培训资料',
-    imgUrl: require('@/assets/img/pxzl.png'),
-    url: '/training'
-  },
-  {
-    menuName: '消息中心',
-    imgUrl: require('@/assets/img/xxzx.png'),
-    url: '/message'
-  },
-  {
     menuName: '新增门店',
     imgUrl: require('@/assets/img/xzmd.png'),
     url: '/addedshop'
   },
   {
-    menuName: '数据同步',
+    menuName: '敬请期待',
+    imgUrl: require('@/assets/img/dhdd.png'),
+    url: '/phoneorder'
+  },
+  {
+    menuName: '敬请期待',
+    imgUrl: require('@/assets/img/ddzt.png'),
+    url: '/orders'
+  },
+  {
+    menuName: '敬请期待',
+    imgUrl: require('@/assets/img/pxzl.png'),
+    url: '/training'
+  },
+  {
+    menuName: '敬请期待',
+    imgUrl: require('@/assets/img/xxzx.png'),
+    url: '/message'
+  },
+
+  {
+    menuName: '敬请期待',
     imgUrl: require('@/assets/img/sjtb.png'),
     url: '/asyncdata'
   }
@@ -173,6 +174,9 @@ export default {
   }
   li:nth-of-type(3n) {
     border-right: none;
+  }
+  li:nth-child(n + 4) {
+    color: #ccc;
   }
 }
 </style>

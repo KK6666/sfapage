@@ -28,13 +28,13 @@ export default {
     ...mapState(['noticeList'])
   },
   mounted() {
-    const noticeId = this.$route.params.id
-    this.notice = this.noticeList.find(item => noticeId == item.id)
+    const noticeIndex = this.$route.params.id
+    this.notice = this.noticeList[noticeIndex]
 
     // 服务器设置已读
-    service.setNoticeReaded(noticeId)
+    service.setNoticeReaded(noticeIndex)
     // 改变vuex里noticeList数据，设置成已读
-    this.setNoticeReaded(noticeId)
+    this.setNoticeReaded(noticeIndex)
   },
   methods: {
     ...mapMutations(['setNoticeReaded'])
