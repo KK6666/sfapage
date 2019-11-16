@@ -90,7 +90,7 @@ export default {
   getShopSales() {
     // return axios.get(`/api/auth/shopSales/${id}`)
     return axios.get(
-      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock1/getShopSales.json'
+      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock1/getShopSales1.json'
     )
   },
   // 文件上传
