@@ -12,7 +12,6 @@
           <div>仓库</div>
           <div class="warehouse">
             <span>{{ warehouse.reponame }}</span>
-            <i class="iconfont">&#xe84e;</i>
           </div>
         </li>
         <li>

@@ -65,7 +65,7 @@
     "packageDimensions": "2kg/个",
     "monery": 328,
     "number": 68,
-    "warehouseId": 103,
+    "warehouseId": 118,
     "onsales": false,
     "type": "食品",
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
@@ -77,7 +77,7 @@
     "packageDimensions": "2包/箱",
     "monery": 372,
     "number": 161,
-    "warehouseId": 119,
+    "warehouseId": 117,
     "onsales": true,
     "type": "食品",
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
@@ -89,7 +89,7 @@
     "packageDimensions": "2包/箱",
     "monery": 227,
     "number": 157,
-    "warehouseId": 107,
+    "warehouseId": 118,
     "onsales": false,
     "type": "洗护",
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
@@ -101,7 +101,7 @@
     "packageDimensions": "2kg/个",
     "monery": 318,
     "number": 78,
-    "warehouseId": 110,
+    "warehouseId": 117,
     "onsales": true,
     "type": "食品",
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
@@ -113,7 +113,7 @@
     "packageDimensions": "12个/包",
     "monery": 42,
     "number": 100,
-    "warehouseId": 111,
+    "warehouseId": 118,
     "onsales": false,
     "type": "宝洁",
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
@@ -125,7 +125,7 @@
     "packageDimensions": "2包/箱",
     "monery": 380,
     "number": 160,
-    "warehouseId": 111,
+    "warehouseId": 117,
     "onsales": false,
     "type": "食品",
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
@@ -137,7 +137,7 @@
     "packageDimensions": "12盒/箱",
     "monery": 100,
     "number": 186,
-    "warehouseId": 116,
+    "warehouseId": 118,
     "onsales": true,
     "type": "食品",
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
@@ -149,7 +149,7 @@
     "packageDimensions": "2包/箱",
     "monery": 193,
     "number": 298,
-    "warehouseId": 118,
+    "warehouseId": 117,
     "onsales": false,
     "type": "宝洁",
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
@@ -161,7 +161,7 @@
     "packageDimensions": "2包/箱",
     "monery": 52,
     "number": 313,
-    "warehouseId": 103,
+    "warehouseId": 118,
     "onsales": false,
     "type": "宝洁",
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
@@ -173,7 +173,7 @@
     "packageDimensions": "2kg/个",
     "monery": 265,
     "number": 381,
-    "warehouseId": 102,
+    "warehouseId": 117,
     "onsales": true,
     "type": "宝洁",
     "img": "http://img3.imgtn.bdimg.com/it/u=2165682634,1275439937&fm=26&gp=0.jpg"
