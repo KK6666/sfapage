@@ -24,7 +24,7 @@ export default {
   login() {
     // return axios.post('/api/login', data)
     return axios.get(
-      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock2/login.json'
+      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock3/login.json'
     )
   },
   // 退出
@@ -35,7 +35,7 @@ export default {
   getUserProgress() {
     // return axios.get('/api/getUserProgress')
     return axios.get(
-      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock2/getUserProgress.json'
+      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock3/getUserProgress.json'
     )
   },
   // 获取公告
@@ -54,7 +54,7 @@ export default {
   // },
   getNotice() {
     return axios.get(
-      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock2/getNotice.json'
+      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock3/getNotice.json'
     )
   },
   // 设置公告已读
@@ -63,7 +63,7 @@ export default {
   // },
   setNoticeReaded() {
     return axios.get(
-      `https://raw.staticdn.net/KK6666/sfapage/master/public/mock2/setNoticeReaded.json`
+      `https://raw.staticdn.net/KK6666/sfapage/master/public/mock3/setNoticeReaded.json`
     )
   },
   // 获取所有店铺,根据设备定位地理坐标获取(q-搜索关键字)
@@ -79,7 +79,7 @@ export default {
   // },
   getShops() {
     return axios.get(
-      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock2/getShops.json'
+      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock3/getShops.json'
     )
   },
   // 获取店铺销售进度
@@ -90,7 +90,7 @@ export default {
   getShopSales() {
     // return axios.get(`/api/auth/shopSales/${id}`)
     return axios.get(
-      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock2/getShopSales.json'
+      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock3/getShopSales.json'
     )
   },
   // 文件上传
@@ -112,7 +112,7 @@ export default {
   // },
   submitSigin() {
     return axios.get(
-      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock2/submitSigin.json'
+      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock3/submitSigin.json'
     )
   },
   // 获取货物信息
@@ -123,7 +123,7 @@ export default {
   // },
   getGoods() {
     return axios.get(
-      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock2/getGoods.json'
+      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock3/getGoods.json'
     )
   },
   // 获取所有仓库信息
@@ -132,7 +132,7 @@ export default {
   // }
   getWarehouse() {
     return axios.get(
-      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock2/getWarehouse.json'
+      'https://raw.staticdn.net/KK6666/sfapage/master/public/mock3/getWarehouse.json'
     )
   }
 }
